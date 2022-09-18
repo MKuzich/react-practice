@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/913.ced1e97d.chunk.js","mappings":"iJAMA,UAJwB,WACtB,OAAO,uBACR,C","sources":["pages/Error/Error.tsx"],"sourcesContent":["import React from 'react';\n\nconst Error: React.FC = () => {\n  return <></>;\n};\n\nexport default Error;\n"],"names":[],"sourceRoot":""}
