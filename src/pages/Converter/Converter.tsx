@@ -62,16 +62,17 @@ const Converter: React.FC = () => {
   return (
     <Container>
       <section>
-        <h1 className="text-center">Currency exchange rates</h1>
-        <Container className="mx-auto">
-          <Title>Currency converter</Title>
-          <Container>
-            <Stack direction="horizontal" gap={3}>
+        <h1 className="text-center my-3">Currency exchange rates</h1>
+        <div className="d-flex flex-column align-items-center">
+          <Title className="text-center mb-3">Currency converter</Title>
+          <div className="border border-dark rounded-3 border-opacity-75">
+            <Stack className="p-3" direction="horizontal" gap={3}>
               <Field
                 name="I have"
                 rates={rates}
                 value={firstValue}
                 currency={firstCurrency}
+                id="1"
                 onChangeHandler={onFirstChangeHandler}
                 onSelectHandler={onFirstSelectHandler}
               />
@@ -83,12 +84,13 @@ const Converter: React.FC = () => {
                 rates={rates}
                 value={secondValue}
                 currency={secondCurrency}
+                id="2"
                 onChangeHandler={onSecondChangeHandler}
                 onSelectHandler={onSecondSelectHandler}
               />
             </Stack>
-          </Container>
-        </Container>
+          </div>
+        </div>
         <CurrencyTable rates={rates} />
       </section>
     </Container>

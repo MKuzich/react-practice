@@ -22,12 +22,17 @@ export const CurrencyTable: React.FC<IProps> = ({ rates }) => {
           </tr>
         </thead>
         <tbody>
-          {rates.map(({ cc, rate }) => (
-            <tr key={cc}>
-              <td className="text-center">{cc}</td>
-              <td className="text-center">{rate}</td>
-            </tr>
-          ))}
+          {rates.map(({ cc, rate }) => {
+            if (cc === 'UAH') {
+              return <></>;
+            }
+            return (
+              <tr key={cc}>
+                <td className="text-center">{cc}</td>
+                <td className="text-center">{rate}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
     </>

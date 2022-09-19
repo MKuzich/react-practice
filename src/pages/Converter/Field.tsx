@@ -7,6 +7,7 @@ interface IProps {
   rates: ICurrency[];
   value: number;
   currency: string;
+  id: string;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onSelectHandler: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
@@ -18,10 +19,11 @@ export const Field: React.FC<IProps> = ({
   onChangeHandler,
   onSelectHandler,
   name,
+  id,
 }) => {
   return (
     <div>
-      <p>{name}</p>
+      <p className="text-center mb-2">{name}</p>
       <Stack direction="horizontal" gap={2}>
         <Form.Control
           type="text"
@@ -30,7 +32,7 @@ export const Field: React.FC<IProps> = ({
         />
         <Form.Select onChange={onSelectHandler} value={currency}>
           {rates.map(({ cc }) => (
-            <option key={cc + '1'} value={cc}>
+            <option key={cc + id} value={cc}>
               {cc}
             </option>
           ))}
