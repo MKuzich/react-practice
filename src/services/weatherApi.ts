@@ -14,6 +14,9 @@ export const getCurrentWeather = async (
     const res: { data: { lat: number; lon: number }[] } = await axios.get(
       CITY_URL
     );
+    if (res.data.length === 0) {
+      throw new Error('Any cities on this request!');
+    }
     const location = res.data[0];
     const lat = location.lat.toString();
     const lon = location.lon.toString();
@@ -34,6 +37,6 @@ export const getCurrentWeather = async (
 
     return { currentWeather, forecastWeather };
   } catch (error: any) {
-    return error;
+    return error.message;
   }
 };

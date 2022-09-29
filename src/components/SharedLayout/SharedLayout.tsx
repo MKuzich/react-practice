@@ -46,7 +46,7 @@ export const SharedLayout: React.FC = () => {
       </Navbar>
       <Suspense
         fallback={
-          <Container>
+          <Container className="d-flex justify-content-center mt-5">
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>

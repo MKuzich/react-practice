@@ -2,6 +2,8 @@ import { GlobalStyle } from './GlobalStyle';
 import React, { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Converter = lazy(() => import('../pages/Converter/Converter'));
@@ -12,6 +14,18 @@ export const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="dark"
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
