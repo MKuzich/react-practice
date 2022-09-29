@@ -45,3 +45,17 @@ export interface IWeather {
   name: string;
   cod: number;
 }
+
+export interface IForecast {
+  list: {
+    dt: number;
+    main: {
+      temp: number;
+    };
+  }[];
+}
+
+export interface IResponse {
+  currentWeather: IWeather;
+  forecastWeather: IForecast;
+}
