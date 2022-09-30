@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getCurrencyExchangeRate } from '../../services/currencyApi';
 import { ICurrency } from '../../types/currency';
 import { Field } from './Field';
-import { Container, Stack } from 'react-bootstrap';
+import { Container, Stack, Button } from 'react-bootstrap';
 import { CurrencyTable } from './CurrencyTable';
 import { Title } from './Converter.styled';
 import { FaExchangeAlt } from 'react-icons/fa';
@@ -59,6 +59,15 @@ const Converter: React.FC = () => {
     }
   };
 
+  const onBtnClickHandler = () => {
+    const tempValue = firstValue;
+    const tempCurrency = firstCurrency;
+    setFirstValue(secondValue);
+    setSecondValue(tempValue);
+    setFirstCurrency(secondCurrency);
+    setSecondCurrency(tempCurrency);
+  };
+
   return (
     <Container>
       <section>
@@ -76,9 +85,14 @@ const Converter: React.FC = () => {
                 onChangeHandler={onFirstChangeHandler}
                 onSelectHandler={onFirstSelectHandler}
               />
-              <div className="mt-auto pb-1">
-                <FaExchangeAlt size="32px" />
-              </div>
+              <Button
+                variant="light"
+                type="button"
+                className="mt-auto px-2 py-1"
+                onClick={onBtnClickHandler}
+              >
+                <FaExchangeAlt size="26px" />
+              </Button>
               <Field
                 name="I will receive"
                 rates={rates}

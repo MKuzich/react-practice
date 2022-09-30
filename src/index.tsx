@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs']}
       minBreakpoint="xs"
     >
-      <BrowserRouter>
+      <BrowserRouter basename="/react-practice/">
         <App />
       </BrowserRouter>
     </ThemeProvider>
