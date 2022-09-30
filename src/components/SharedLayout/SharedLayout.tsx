@@ -6,6 +6,7 @@ import { DiWebplatform } from 'react-icons/di';
 import { BsCurrencyExchange } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
 import { TiWeatherCloudy } from 'react-icons/ti';
+import { TbChartLine } from 'react-icons/tb';
 
 export const SharedLayout: React.FC = () => {
   return (
@@ -40,6 +41,14 @@ export const SharedLayout: React.FC = () => {
             >
               <TiWeatherCloudy />
               Weather
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/market"
+              className="d-flex flex-column align-items-center"
+            >
+              <TbChartLine />
+              Market
             </Nav.Link>
           </Nav>
         </Container>

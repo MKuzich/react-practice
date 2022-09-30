@@ -8,7 +8,7 @@ export const getCurrentWeather = async (
     appid: '7c0ca10b6b7d582c36f6c73564f8fbab',
     q: city,
   });
-  const CITY_URL = `http://api.openweathermap.org/geo/1.0/direct?${searchCityParams}`;
+  const CITY_URL = `https://api.openweathermap.org/geo/1.0/direct?${searchCityParams}`;
 
   try {
     const res: { data: { lat: number; lon: number }[] } = await axios.get(
