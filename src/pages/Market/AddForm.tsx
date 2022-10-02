@@ -76,7 +76,9 @@ export const AddForm: React.FC<IProps> = ({ addSymbols }) => {
               ))}
           </Form.Select>
         </Form.Group>
-        <Button type="submit">Add</Button>
+        <Button type="submit" className="mt-auto" variant="dark">
+          Add
+        </Button>
       </Stack>
     </Form>
   );
